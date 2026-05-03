@@ -832,3 +832,6 @@ Apply the full thinking framework:
 8. If the user's curl version is unknown, mention `curl --version` as a first step.
 9. Never recommend `-k` (insecure) without explaining the security implications.
 10. Prefer `--` long options in documentation for clarity; use `-` short options for quick one-liners.
+
+
+THEN IN LAST MAKE memory.txt file of all request and response and all thinsg add in that 
